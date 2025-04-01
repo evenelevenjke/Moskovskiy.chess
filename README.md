@@ -1,84 +1,89 @@
 # Moskovskiy.chess
 Very good chess by greatest Kirill Moskovskiy TRPO24-1
-# Chess and Checkers Simulator: Object-Oriented Version
+# Шахматный симулятор и шашки: объектно-ориентированная версия
 
-This project is a console application implemented in Python that allows you to play both chess and checkers. The program features advanced functionalities such as move history with undo/redo, hints for possible moves, threat analysis, and the ability to save and load games. Additionally, it supports unique chess pieces such as the Wizard, Dragon, and Archer.
+Этот проект представляет собой консольное приложение на Python, которое позволяет играть как в шахматы, так и в шашки. Приложение включает такие возможности, как история ходов с функциями отмены (undo) и повтора (redo), подсказки для возможных ходов, анализ угроз, а также сохранение и загрузка партий. Кроме того, поддерживаются уникальные шахматные фигуры: Волшебник, Дракон и Стрелок.
 
-## Repository Contents
+## Содержание репозитория
 
-- **chesss.py** – The main code file containing the implementation of the game logic, board, pieces, and gameplay.
-- **documentation.txt** – Detailed documentation of the project.
-- **requirements.txt** – List of dependencies (none; only the standard Python libraries are used).
-- **README.md** – This file.
+- **chesss.py** – основной файл с кодом, содержащий реализацию логики игры, доски, фигур и игрового процесса.
+- **documentation.txt** – подробная документация проекта.
+- **requirements.txt** – список зависимостей (пустой, используются только стандартные библиотеки Python).
+- **README.md** – данный файл.
 
-## Project Description
+## Описание проекта
 
-### Core Functionality
+### Основной функционал
 
-- **Chess Mode:**  
-  Standard chess game on an 8x8 board. Players input moves in standard chess notation (e.g., `e2 e4`), and the program validates moves according to chess rules.
-  
-- **Checkers Mode:**  
-  The game supports checkers via the same board (using the `game_type` parameter) with dedicated rules for regular checkers and kings.
-  
-- **Move History:**  
-  All moves are tracked, allowing you to undo (`back`) and redo (`next`) moves.
-  
-- **Hints:**  
-  The command `hint <position>` (e.g., `hint e2`) displays all possible moves for a piece on a given square with visual highlighting.
-  
-- **Threat Analysis:**  
-  The command `threats <position>` (e.g., `threats e4`) shows which opponent pieces threaten the square.
-  
-- **Saving/Loading:**  
-  Save the game using `save <filename>` and load a game using `load <filename>`.
+- **Режим игры в шахматы:**  
+  Игра на стандартной доске 8×8. Игроки вводят ходы в стандартной шахматной нотации (например, `e2 e4`), а программа проверяет корректность ходов согласно правилам шахмат.
 
-### Additional Features
+- **Режим игры в шашки:**  
+  Поддержка шашек реализована через параметр `game_type` доски и отдельные классы для обычных шашек и дамок.
 
-- **Unique Chess Pieces:**
-  - **Wizard (w/W):** Combines moves of a knight and a king.
-  - **Dragon (d/D):** Combines moves of a rook and a knight.
-  - **Archer (a/A):** Moves like a bishop or "shoots" diagonally two squares, attacking opponent pieces.
+- **История ходов:**  
+  Все ходы сохраняются, что позволяет отменять (`back`) и повторять (`next`) ходы.
 
-- **Checkers Pieces:**
-  - **Checker (b/W):** Moves diagonally forward and captures by jumping.
-  - **KingChecker (k/K):** Moves diagonally in any direction and captures by jumping.
+- **Подсказки:**  
+  Команда `hint <позиция>` (например, `hint e2`) отображает все возможные ходы для фигуры на указанной клетке с визуальной подсветкой.
 
-## Installation and Running
+- **Анализ угроз:**  
+  Команда `threats <позиция>` (например, `threats e4`) показывает, какие фигуры противника могут атаковать данную клетку.
 
-### Requirements
+- **Сохранение и загрузка партии:**  
+  Команды `save <имя_файла>` и `load <имя_файла>` позволяют сохранять историю ходов в файл и загружать партии.
 
-- Python 3.6 or higher.
-- No external libraries are required; the game uses only the standard Python library.
+### Дополнительные возможности
 
-### How to Run the Game
+- **Уникальные шахматные фигуры:**
+  - **Волшебник (w/W):** Комбинирует ходы коня и короля.
+  - **Дракон (d/D):** Сочетает ходы ладьи и коня.
+  - **Стрелок (a/A):** Ходит как слон или «выстреливает» диагонально на две клетки, атакуя фигуры противника.
 
-1. Clone or download the repository.
-2. Open a terminal in the repository directory.
-3. Run the game using the command:
+- **Фигуры для шашек:**
+  - **Шашка (Checker):** Ходит по диагонали вперёд, захватывая фигуры прыжком.
+  - **Дамка (KingChecker):** Ходит по диагонали в любом направлении, захватывая фигуры прыжком.
+
+## Установка и запуск
+
+### Требования
+
+- Python версии 3.6 или выше.
+- Дополнительных библиотек не требуется, используется только стандартная библиотека Python.
+
+### Как запустить игру
+
+1. Склонируйте или скачайте репозиторий.
+2. Откройте терминал в директории проекта.
+3. Запустите игру командой:
 
    ```bash
    python chesss.py
-When prompted, select the game mode:
+При появлении запроса выберите режим игры:
 
-Enter 1 to play Chess.
+Введите 1 для игры в шахматы.
 
-Enter 2 to play Checkers.
+Введите 2 для игры в шашки.
 
-Follow the on-screen instructions. Examples of commands include:
+Следуйте инструкциям, выводимым на экран. Примеры команд:
 
-Move: e2 e4
+Ход: e2 e4
 
-Undo Move: back
+Отмена хода: back
 
-Redo Move: next
+Повтор хода: next
 
-Hint: hint e2
+Подсказка: hint e2
 
-Threats: threats e4
+Анализ угроз: threats e4
 
-Save Game: save game.txt
+Сохранение партии: save game.txt
 
-Load Game: load game.txt
+Загрузка партии: load game.txt
 
-Exit: exit
+Выход: exit
+
+
+
+
+
